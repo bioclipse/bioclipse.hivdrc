@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.hivdrc.org/hivpredrt" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.hivdrc.org/hivpredrt">
+
+    <element name="HIVPredRTInput" type="tns:HIVPredRTInputType"></element>
+    
+    <complexType name="HIVPredRTInputType">
+    	<attribute name="sequence" type="string"></attribute>
+    </complexType>
+    
+    <element name="HIVPredRTOutput" type="tns:HIVPredRTOutputType"></element>
+    
+    <complexType name="HIVPredRTOutputType">
+    	<sequence>
+    		<element name="mutNotInDataset"
+    			type="tns:MutNotInDatasetType" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="mutOutsideModelBoundaries"
+    			type="tns:MutOutsideModelBoundariesType" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="mutPlusMutOutsideModelBoundaries"
+    			type="tns:MutPlusMutOutsideModelBoundariesType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    		<element name="mutPlusWtOutsideModelBoundaries"
+    			type="tns:MutPlusWtOutsideModelBoundariesType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    		<element name="result" type="tns:resultType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    	<attribute name="warningMessage" type="string"></attribute>
+    	<attribute name="errorMessage" type="string"></attribute>
+    </complexType>
+
+    <complexType name="MutNotInDatasetType">
+    	<attribute name="name" type="string"></attribute>
+    </complexType>
+
+    <complexType name="MutOutsideModelBoundariesType">
+    	<attribute name="name" type="string"></attribute>
+    </complexType>
+
+    <complexType name="MutPlusMutOutsideModelBoundariesType">
+    	<attribute name="name" type="string"></attribute>
+    </complexType>
+
+    <complexType name="MutPlusWtOutsideModelBoundariesType">
+    	<attribute name="name" type="string"></attribute>
+    </complexType>
+
+    <complexType name="resultType">
+    	<attribute name="name" type="string"></attribute>
+    	<attribute name="result" type="double"></attribute>
+    </complexType>
+
+
+</schema>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/se.uu.farmbio.hivpredrt.model/src"
+    modelPluginID="se.uu.farmbio.hivpredrt.model" modelName="Hivpredrt" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>hivpredrt.xsd</foreignModel>
+  <genPackages prefix="Hivpredrt" basePackage="org.hivdrc" resource="XML" disposableProviderFactory="true"
+      ecorePackage="hivpredrt.ecore#/">
+    <genClasses ecoreClass="hivpredrt.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute hivpredrt.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference hivpredrt.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference hivpredrt.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hivpredrt.ecore#//DocumentRoot/hIVPredRTInput"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hivpredrt.ecore#//DocumentRoot/hIVPredRTOutput"/>
+    </genClasses>
+    <genClasses ecoreClass="hivpredrt.ecore#//HIVPredRTInputType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hivpredrt.ecore#//HIVPredRTInputType/sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="hivpredrt.ecore#//HIVPredRTOutputType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hivpredrt.ecore#//HIVPredRTOutputType/mutNotInDataset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hivpredrt.ecore#//HIVPredRTOutputType/mutOutsideModelBoundaries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hivpredrt.ecore#//HIVPredRTOutputType/mutPlusMutOutsideModelBoundaries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hivpredrt.ecore#//HIVPredRTOutputType/mutPlusWtOutsideModelBoundaries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hivpredrt.ecore#//HIVPredRTOutputType/result"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hivpredrt.ecore#//HIVPredRTOutputType/errorMessage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hivpredrt.ecore#//HIVPredRTOutputType/warningMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="hivpredrt.ecore#//MutNotInDatasetType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hivpredrt.ecore#//MutNotInDatasetType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="hivpredrt.ecore#//MutOutsideModelBoundariesType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hivpredrt.ecore#//MutOutsideModelBoundariesType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="hivpredrt.ecore#//MutPlusMutOutsideModelBoundariesType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hivpredrt.ecore#//MutPlusMutOutsideModelBoundariesType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="hivpredrt.ecore#//MutPlusWtOutsideModelBoundariesType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hivpredrt.ecore#//MutPlusWtOutsideModelBoundariesType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="hivpredrt.ecore#//ResultType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hivpredrt.ecore#//ResultType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hivpredrt.ecore#//ResultType/result"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
