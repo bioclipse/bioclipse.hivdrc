@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.hivdrc.org/hivpred" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.hivdrc.org/hivpred">
+
+    <xs:element name="HIVPredInput" type="tns:HIVPredInputType"></xs:element>
+    
+    <xs:complexType name="HIVPredInputType">
+    	<xs:attribute name="sequence" type="xs:string"></xs:attribute>
+    </xs:complexType>
+    
+    <xs:element name="HIVPredOutput" type="tns:HIVPredOutputType"></xs:element>
+    
+    <xs:complexType name="HIVPredOutputType">
+    	<xs:sequence>
+    		<xs:element name="mutNotInDataset"
+    			type="tns:MutNotInDatasetType" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="mutOutsideModelBoundaries"
+    			type="tns:MutOutsideModelBoundariesType" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</xs:element>
+    		<xs:element name="mutPlusMutOutsideModelBoundaries"
+    			type="tns:MutPlusMutOutsideModelBoundariesType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="mutPlusWtOutsideModelBoundaries"
+    			type="tns:MutPlusWtOutsideModelBoundariesType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</xs:element>
+    		<xs:element name="result" type="tns:resultType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</xs:element>
+    	</xs:sequence>
+    	<xs:attribute name="warningMessage" type="xs:string"></xs:attribute>
+    	<xs:attribute name="errorMessage" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="MutNotInDatasetType">
+    	<xs:attribute name="name" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="MutOutsideModelBoundariesType">
+    	<xs:attribute name="name" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="MutPlusMutOutsideModelBoundariesType">
+    	<xs:attribute name="name" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="MutPlusWtOutsideModelBoundariesType">
+    	<xs:attribute name="name" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="resultType">
+    	<xs:attribute name="name" type="xs:string"></xs:attribute>
+    	<xs:attribute name="result" type="xs:double"></xs:attribute>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hivpred:HIVPredOutput xmlns:hivpred="http://www.hivdrc.org/hivpred">
+    <hivpred:mutNotInDataset name="wehoow"/>
+    <hivpred:result name="ret1" result="-0.876"/>
+    <hivpred:result name="ret2" result="0.376"/>
+</hivpred:HIVPredOutput>
