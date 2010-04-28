@@ -1,0 +1,18 @@
+package se.uu.farmbio.hivpredrt.web;
+
+public class HIVRTPredictionContants {
+
+    public final static int PROTEASE_EXACT_LENGTH = 240;
+
+    public final static String PROPERTIES_FILE="HIV.properties";
+
+    public static final String PREDICT_HOMEPAGE = "http://www.hivdrc.org/predictRTSuscept/";
+
+    public final static String TEMP_FILE_DIR_LOCAL="/Users/ola/Workspaces/bioclipse2_1/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT/temp";
+    public final static String TEMP_FILE_DIR_WS1="/var/lib/tomcat-6/webapps/ROOT/farmbio/temp";
+
+    public final static String TEMP_URL_BASE_LOCAL="http://localhost:8080/temp/";
+    public final static String TEMP_URL_BASE_WS1="http://ws1.bmc.uu.se:8080/farmbio/temp/";
+
+
+}

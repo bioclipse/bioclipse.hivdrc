@@ -1,0 +1,38 @@
+9
+
+dir
+34
+svn+ssh://ola@pele.farmbio.uu.se/opt/svnroot/Services/se.uu.farmbio.hivpredrt.web/src/se/uu/farmbio/hivpredrt
+svn+ssh://ola@pele.farmbio.uu.se/opt/svnroot/Services
+
+
+
+2009-03-05T12:13:06.759504Z
+34
+ola
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c813ddd3-5aae-4b42-8859-7724b9c25a47
+
+
+
+
+
+
+0
+
+web
+dir
+

@@ -1,0 +1,125 @@
+package se.uu.farmbio.hivpredrt.web;
+
+import java.util.HashSet;
+import java.util.Set;
+
+
+public class RTHelper{
+
+    int exactLength;
+    Set<String> AAcodes;
+
+    public RTHelper(int length){
+        this.exactLength=length;
+        setupValidAminoAcids();
+    }
+
+    /**
+     * Set up valid AA single letter codes in a collection.<br>
+     * Only add lowercase so convert to lowercase before a contains().
+     *
+     */
+    private void setupValidAminoAcids() {
+        AAcodes=new HashSet<String>();
+        AAcodes.add("a");
+        AAcodes.add("r");
+        AAcodes.add("n");
+        AAcodes.add("d");
+        AAcodes.add("c");
+        AAcodes.add("e");
+        AAcodes.add("q");
+        AAcodes.add("g");
+        AAcodes.add("h");
+        AAcodes.add("i");
+        AAcodes.add("l");
+        AAcodes.add("k");
+        AAcodes.add("m");
+        AAcodes.add("f");
+        AAcodes.add("p");
+        AAcodes.add("s");
+        AAcodes.add("t");
+        AAcodes.add("w");
+        AAcodes.add("y");
+        AAcodes.add("v");
+
+    }
+
+    /**
+     * return null if valid, Error string otherwise.
+     */
+    public String isValid(String input) {
+
+        //Check for null input
+        if (input == null || input.length() == 0)
+            return "Sequence cannot be empty";
+
+        //Loop through all and locate any non-existing aminoacids
+        for (int i=0; i<input.length(); i++){
+            if (!(AAcodes.contains(input.substring(i,i+1).toLowerCase()))){
+                return "Sequence position " + (i+1) + "='" + input.substring(i,i+1) + 
+                "' is not recognized as a single letter amino acid code. See <a href=\"http://en.wikipedia.org/wiki/Aminoacids#Table_of_standard_amino_acid_abbreviations_and_side_chain_properties\">list of valid aa codes.</a>";
+            }
+        }
+
+        //Check if too short
+        if (input.length()<HIVRTPredictionContants.PROTEASE_EXACT_LENGTH){
+            return "Sequence is too short (" + input.length() +"). Must be " + HIVRTPredictionContants.PROTEASE_EXACT_LENGTH + " aa long.";
+        }
+
+        //Check if too long
+        if (input.length()>HIVRTPredictionContants.PROTEASE_EXACT_LENGTH){
+            return "Sequence is too long (" + input.length() +"). Must be " + HIVRTPredictionContants.PROTEASE_EXACT_LENGTH + " aa long.";
+        }
+
+        return null;
+    }
+
+
+/**
+ * From the input, parse and set up 240 aa RT sequence
+ * @param input
+ * @return
+ * @throws IllegalArgumentException
+ */
+    public static String processRawInputString( String input ) throws IllegalArgumentException{
+
+        //Remove leading and trailing whitespaces
+        input=input.trim();
+        
+        if (input.length()<240){
+            throw new IllegalArgumentException("The input sequence is only " 
+                                               + input.length() + " aa, " +
+                                               		"must be 240 or 242 long");
+        }
+        else if (input.length()>242){
+            throw new IllegalArgumentException("The input sequence is too long (" 
+                                               + input.length() + " chars), " +
+                                                  "must be 240 or 242 aa long");
+        }
+        else if (input.length()==241){
+            throw new IllegalArgumentException("The input sequence is 241 chars. " +
+                                                  "It must be 240 or 242 aa long");
+        }
+
+        String sequence="";
+        //Handle case where sequence is 242 long, remove aa aat index 70 and 71
+        if (input.length()==242){
+            sequence=input.substring( 0,69 ) + input.substring( 71,242 );
+            if (sequence.charAt( 70 )=='W'){
+                return sequence;
+            }else{
+                throw new IllegalArgumentException("Index 71 is " + sequence.charAt( 70 ) +". Must be conserved W." );
+            }
+        }
+        if (input.length()==240){
+            if (input.charAt( 70 )=='W'){
+                return input;
+            }else{
+                throw new IllegalArgumentException("Index 71 is " + input.charAt( 70 ) +". Must be conserved W." );
+            }
+        }
+
+        throw new IllegalArgumentException("Unexpected error on input: " + input 
+                                           + " length: " + input.length());
+    }
+}
