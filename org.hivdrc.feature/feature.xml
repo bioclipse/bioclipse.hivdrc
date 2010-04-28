@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.hivdrc.feature"
+      label="HIVDRC"
+      version="1.0.0"
+      provider-name="hivdrc.org"
+      plugin="org.hivdrc.client">
+
+   <description url="http://www.hivdrc.org/index.php?title=HIVDRC_plugins_for_Bioclipse">
+      A feature for predicting the susceptibility of HIV proteases and reverse transcriptases using the Web service at http://www.hivdrc.org/index.php?title=Webservices.
+   </description>
+
+   <copyright>
+      (C) Copyright 2010 HIVDRC.ORG
+   </copyright>
+
+   <license url="http://www.eclipse.org/org/documents/epl-v10.php">
+      This feature and the accompanying materials are made available
+under the terms of the Eclipse Public License v1.0.
+
+The Eclipse Public License accompanies this distribution, and
+is available at http://www.eclipse.org/legal/epl-v10.html
+   </license>
+
+   <includes
+         id="org.eclipse.emf"
+         version="0.0.0"/>
+
+   <requires>
+      <import feature="net.bioclipse.xws4j_feature" version="2.2.0.v20100127" match="greaterOrEqual"/>
+      <import feature="net.bioclipse.core_feature" version="2.2.0.v20100127" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.hivdrc.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="se.uu.farmbio.hivpred.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="se.uu.farmbio.hivpredrt.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
