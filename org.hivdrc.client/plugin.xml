@@ -34,26 +34,52 @@
      <command
            id="net.bioclipse.xmpp.hivpred.invoke"
            categoryId="net.bioclipse.xmpp.hivpred.category"
-           name="Hivpred"/>
+           name="HivpredPI"/>
+     <command
+           id="net.bioclipse.xmpp.hivpredrt.invoke"
+           categoryId="net.bioclipse.xmpp.hivpred.category"
+           name="HivpredNRTI"/>
   </extension>
 
 <extension
         point="org.eclipse.ui.handlers">
      <handler
-        class="org.hivdrc.client.actions.HivpredAction"
+        class="org.hivdrc.client.actions.PredictPIHandler"
         commandId="net.bioclipse.xmpp.hivpred.invoke">
      </handler>
+     <handler
+        class="org.hivdrc.client.actions.PredictNRTIHandler"
+        commandId="net.bioclipse.xmpp.hivpredrt.invoke">
+     </handler>
 </extension> 
+
 
 
 <extension 
   id="net.bioclipse.xmpp.hivpred.menus"
   point="org.eclipse.ui.menus">
 	<menuContribution
-           locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+           locationURI="popup:net.bioclipse.ui.popup.predict?after=additions">
         <command
               commandId="net.bioclipse.xmpp.hivpred.invoke">
+  	      <visibleWhen>
+  	 		<iterate operator="and" ifEmpty="false">
+      			<or>
+      			<adapt type="org.eclipse.core.resources.IResource">
+      			<or>
+	      			<test property="org.eclipse.core.resources.name" value="*.fasta"/> 
+    	  			<test property="org.eclipse.core.resources.name" value="*.seq"/> 
+               	</or>
+      			</adapt>
+      			<adapt type="org.eclipse.jface.text.ITextSelection" />
+				</or>
+   			</iterate>
+        </visibleWhen>
               
+        </command>
+        
+        <command
+              commandId="net.bioclipse.xmpp.hivpredrt.invoke">
   	      <visibleWhen>
   	 		<iterate operator="and" ifEmpty="false">
       			<or>
