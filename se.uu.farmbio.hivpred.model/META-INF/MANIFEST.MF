@@ -6,16 +6,15 @@ Bundle-Version: 2.0.0.v20090707
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.hivdrc.hivpred,
  org.hivdrc.hivpred.conversion,
  org.hivdrc.hivpred.impl,
  org.hivdrc.hivpred.util
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.xmi;bundle-version="2.4.1",
- org.apache.xerces;bundle-version="2.9.0",
- net.bioclipse.xws4j;bundle-version="1.0.0",
- net.bioclipse.xom;bundle-version="1.1.0"
+Require-Bundle: org.apache.xerces,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ net.bioclipse.xws4j,
+ net.bioclipse.xom
 Bundle-ActivationPolicy: lazy
-Import-Package: org.apache.log4j;version="1.2.15"
+Import-Package: org.apache.log4j

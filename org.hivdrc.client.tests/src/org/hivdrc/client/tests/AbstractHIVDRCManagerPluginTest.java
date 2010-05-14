@@ -29,6 +29,7 @@ import net.bioclipse.xws4j.business.XwsManager;
 import net.bioclipse.xws4j.exceptions.Xws4jException;
 import net.bioclipse.xws4j.preferences.PreferenceConstants;
 
+import org.hivdrc.client.business.IHIVDRCManager;
 import org.hivdrc.hivpred.DocumentRoot;
 import org.hivdrc.hivpred.HIVPredInputType;
 import org.hivdrc.hivpred.HIVPredOutputType;
@@ -142,7 +143,7 @@ public abstract class AbstractHIVDRCManagerPluginTest {
     @Test
     public void testPredictString() throws Xws4jException, XmppException, InterruptedException  {
       String seq="AAAALWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNF";
-      HIVPredOutputType res = hivdrc.predict(seq);
+      HIVPredOutputType res = hivdrc.predictPI(seq);
       assertNotNull(res);
 
       /*
@@ -201,7 +202,7 @@ public abstract class AbstractHIVDRCManagerPluginTest {
           
           System.out.println("Trying to predict file: " + path);
 
-      HIVPredOutputType res = hivdrc.predict(path);
+      HIVPredOutputType res = hivdrc.predictPI(path);
       assertNotNull(res);
 
       //File contains same string as in testPredictString() method

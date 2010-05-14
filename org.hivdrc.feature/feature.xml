@@ -22,13 +22,9 @@ The Eclipse Public License accompanies this distribution, and
 is available at http://www.eclipse.org/legal/epl-v10.html
    </license>
 
-   <includes
-         id="org.eclipse.emf"
-         version="0.0.0"/>
-
    <requires>
       <import feature="net.bioclipse.xws4j_feature" version="2.2.0.v20100127" match="greaterOrEqual"/>
-      <import feature="net.bioclipse.core_feature" version="2.2.0.v20100127" match="greaterOrEqual"/>
+      <import feature="net.bioclipse.core_feature" version="2.4.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -47,6 +43,76 @@ is available at http://www.eclipse.org/legal/epl-v10.html
 
    <plugin
          id="se.uu.farmbio.hivpredrt.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore.xmi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.databinding"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.databinding.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore.change"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore.change.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.bioclipse.xom"
          download-size="0"
          install-size="0"
          version="0.0.0"

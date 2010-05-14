@@ -19,6 +19,7 @@ import org.hivdrc.hivpredrt.HIVPredRTOutputType;
 import net.bioclipse.core.PublishedClass;
 import net.bioclipse.core.PublishedMethod;
 import net.bioclipse.core.Recorded;
+import net.bioclipse.core.business.BioclipseException;
 import net.bioclipse.managers.business.IBioclipseManager;
 import net.bioclipse.xws.exceptions.XmppException;
 import net.bioclipse.xws4j.exceptions.Xws4jException;
@@ -115,7 +116,9 @@ public interface IHIVDRCManager extends IBioclipseManager {
         "long string in one letter aa code.",
                       params = "String sequence" )
     @Recorded
-    public HIVPredRTOutputType predictNRTI(String sequence) throws Xws4jException, XmppException, InterruptedException;
+    public HIVPredRTOutputType predictNRTI(String sequence) 
+    throws Xws4jException, XmppException, InterruptedException, 
+           BioclipseException;
 
     /**
      * Invoke the hivpredRT XMPP service on a NRTI sequence, 240 aa String.
@@ -132,7 +135,10 @@ public interface IHIVDRCManager extends IBioclipseManager {
         "existing XMPP hivpred service",
                       params = "String sequence, String JID" )
     @Recorded
-    public Map<String, HIVPredRTOutputType> predictNRTI(String sequence, String JID) throws Xws4jException, XmppException, InterruptedException;
+    public Map<String, HIVPredRTOutputType> predictNRTI(String sequence, 
+                                                        String JID) 
+    throws Xws4jException, XmppException, InterruptedException, 
+           BioclipseException;
 
     /**
      * Invoke the hivpredRT XMPP service on a NRTI sequence, 240 aa String.
@@ -147,7 +153,9 @@ public interface IHIVDRCManager extends IBioclipseManager {
         "long string in one letter aa code.",
                       params = "String sequence" )
     @Recorded
-  Map<String, HIVPredRTOutputType> predictNRTI(List<String> sequences) throws Xws4jException, XmppException, InterruptedException;
+  Map<String, HIVPredRTOutputType> predictNRTI(List<String> sequences) 
+  throws Xws4jException, XmppException, InterruptedException, 
+         BioclipseException;
 
     
     /**
@@ -165,7 +173,9 @@ public interface IHIVDRCManager extends IBioclipseManager {
         "existing XMPP hivpred service",
                       params = "String sequence, String JID" )
     @Recorded
-  Map<String, HIVPredRTOutputType> predictNRTI(List<String> sequences, String JID) throws Xws4jException, XmppException, InterruptedException;
+  Map<String, HIVPredRTOutputType> predictNRTI(List<String> sequences, 
+                                               String JID) 
+  throws Xws4jException, XmppException, InterruptedException, BioclipseException;
 
     
  

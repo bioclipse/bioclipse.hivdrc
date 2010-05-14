@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 import net.bioclipse.core.ResourcePathTransformer;
+import net.bioclipse.core.business.BioclipseException;
 import net.bioclipse.managers.business.IBioclipseManager;
 
 import org.hivdrc.client.FixedLengthProteinSequenceValidator;
@@ -311,9 +312,11 @@ public class HIVDRCManager implements IBioclipseManager {
      * @throws XmppException 
      * @throws Xws4jException 
      * @throws InterruptedException 
+     * @throws BioclipseException 
      */
     public HIVPredRTOutputType predictNRTI(String sequence) 
-    throws Xws4jException, XmppException, InterruptedException {
+    throws Xws4jException, XmppException, InterruptedException, 
+           BioclipseException {
 
       Map<String, HIVPredRTOutputType> map = predictNRTI(sequence, 
                                    HIVPredictionContants.DEFAULT_HIVRTPRED_JID);
@@ -332,10 +335,14 @@ public class HIVDRCManager implements IBioclipseManager {
      * @throws XmppException 
      * @throws Xws4jException 
      * @throws InterruptedException 
+     * @throws BioclipseException 
      */
     public Map<String, HIVPredRTOutputType> predictNRTI(String sequence, 
                                                         String JID) 
-                    throws Xws4jException, XmppException, InterruptedException {
+                                                        throws Xws4jException, 
+                                                        XmppException, 
+                                                        InterruptedException, 
+                                                        BioclipseException {
 
       List<String> sequences=new ArrayList<String>();
 
@@ -375,7 +382,8 @@ public class HIVDRCManager implements IBioclipseManager {
         }
 
         if (sequences.size()<=0){
-          throw new IllegalArgumentException(singleSec);
+            logger.debug("Error with service input: " + singleSec);
+          throw new BioclipseException(singleSec);
         }
       }
 
@@ -391,7 +399,8 @@ public class HIVDRCManager implements IBioclipseManager {
      * @throws InterruptedException 
      */
     public Map<String, HIVPredRTOutputType> predictNRTI(List<String> sequences) 
-    throws Xws4jException, XmppException, InterruptedException {
+    throws Xws4jException, XmppException, InterruptedException, 
+           BioclipseException {
       return predictNRTI(sequences, HIVPredictionContants.DEFAULT_HIVRTPRED_JID);
     }
 
@@ -405,7 +414,8 @@ public class HIVDRCManager implements IBioclipseManager {
      */
     public Map<String, HIVPredRTOutputType> predictNRTI(List<String> sequences, 
                                                         String JID) 
-                    throws Xws4jException, XmppException, InterruptedException {
+                    throws Xws4jException, XmppException, InterruptedException, 
+                    BioclipseException {
 
       //Connect if not connected
       if (!(xmpp.isConnected()))
@@ -471,7 +481,8 @@ public class HIVDRCManager implements IBioclipseManager {
      */
     private HIVPredRTOutputType doPredictionNRTI(String sequence, 
                                                  IFunction hivRTFunction) 
-    throws XmppException, XwsException, InterruptedException {
+    throws XmppException, XwsException, InterruptedException, 
+    BioclipseException {
 
         HIVPredRTInputType in = HivpredrtFactory.eINSTANCE
         .createHIVPredRTInputType();

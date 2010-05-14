@@ -16,7 +16,6 @@ import net.bioclipse.xws.JavaDOMTools;
 import nu.xom.Serializer;
 import nu.xom.converters.DOMConverter;
 
-import org.apache.xerces.dom.DocumentImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -39,6 +38,8 @@ import org.w3c.dom.bootstrap.DOMImplementationRegistry;
 import org.w3c.dom.ls.DOMImplementationLS;
 import org.w3c.dom.ls.LSOutput;
 import org.w3c.dom.ls.LSSerializer;
+
+import com.sun.org.apache.xerces.internal.dom.DocumentImpl;
 
 public class EMFDOMConversion {
 
