@@ -132,6 +132,9 @@ public class HIVDRCManager implements IBioclipseManager {
             else{
               logger.error("Line #" + cnt + ": " + tmpSeq +" invalid: " 
                            + validationMessage);
+              throw new BioclipseException( "Line #" + cnt + ": " 
+                                            + tmpSeq +" invalid: " 
+                                            + validationMessage);
             }
           }
         }
@@ -368,6 +371,9 @@ public class HIVDRCManager implements IBioclipseManager {
             else{
               logger.error("Line #" + cnt + ": " + tmpSeq +" invalid: " 
                            + validationMessage);
+              throw new BioclipseException( "Line #" + cnt + ": " 
+                                            + tmpSeq +" invalid: " 
+                                            + validationMessage);
             }
           }
         }

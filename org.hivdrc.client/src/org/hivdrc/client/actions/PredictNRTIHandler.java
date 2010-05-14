@@ -1,9 +1,7 @@
 package org.hivdrc.client.actions;
 
-import net.bioclipse.core.business.BioclipseException;
-import net.bioclipse.xws.exceptions.XmppException;
-import net.bioclipse.xws4j.exceptions.Xws4jException;
-
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.ui.PlatformUI;
 import org.hivdrc.client.Activator;
 
 /**
@@ -14,8 +12,15 @@ import org.hivdrc.client.Activator;
 public class PredictNRTIHandler extends AbstractHIVDRCHandler {
 
     @Override
-    protected void doPrediction( String filepath ) throws Xws4jException, XmppException, InterruptedException, BioclipseException {
-        Activator.getDefault().getJavaHIVDRCManager().predictNRTI( filepath );
+    protected void doPrediction( String filepath ) {
+        try {
+            Activator.getDefault().getJavaHIVDRCManager().predictNRTI( filepath );
+        } catch ( Exception e ) {
+            
+            MessageDialog.openError( 
+                PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
+                "Error", e.getMessage() );
+        } 
     }
 
 }

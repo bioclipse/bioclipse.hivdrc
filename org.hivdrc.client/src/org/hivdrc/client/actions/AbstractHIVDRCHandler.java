@@ -140,6 +140,5 @@ public abstract class AbstractHIVDRCHandler extends AbstractHandler {
         };
       }
 
-    protected abstract void doPrediction( String filepath ) 
-    throws Xws4jException, XmppException, InterruptedException, BioclipseException;
+    protected abstract void doPrediction( String filepath );
 }

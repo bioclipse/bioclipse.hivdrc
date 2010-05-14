@@ -13,13 +13,13 @@
    <extension
          point="org.eclipse.ui.views">
       <category
-            name="HIVPredWS Category"
-            id="bc_hivProteaseSuscept">
+            name="HIVDRC Category"
+            id="org.hivdrc.category">
       </category>
       <view
             name="HIV Protease Susceptibility Result View"
             icon="icons/hiv16.png"
-            category="bc_hivProteaseSuscept"
+            category="org.hivdrc.category"
             class="org.hivdrc.client.views.HIVPredictionResultView"
             id="net.bioclipse.xmpp.hivpred.views.HIVPredictionResultView">
       </view>
@@ -52,7 +52,6 @@
         commandId="net.bioclipse.xmpp.hivpredrt.invoke">
      </handler>
 </extension> 
-
 
 
 <extension 
