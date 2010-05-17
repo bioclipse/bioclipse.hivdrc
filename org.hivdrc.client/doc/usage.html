@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>User guide</title>
+  <link rel="stylesheet" href="../../PRODUCT_PLUGIN/narrow_book.css" type="text/css">
+</head>
+<body>
+
+<h2>User guide</h2>
+
+<h2>Configure XMPP account</h2>
+You need an XMPP account (also known as Jabber ID, or simply JID) in order to use 
+the HIVDRC services. You can register for an account at any <a href="http://xmpp.org/services/">public XMPP service</a>. 
+When you have obtained a JID, enter this information in the Bioclipse Preferences 
+from menu <b>Window > Preferences</b> and input username and password on the <b>XMPP</b> tab.<p>
+
+<img src="images/prefs-xmpp.png" align="center" width="500"><p>
+<br>
+
+<h2>Access service from the GUI</h2>
+In the Bioclipse Explorer you can right-click on sequences (with extension .fasta and .seq) 
+and invoke the HIVDRC services. Note that PIs should be 99 aa long, and NRTIs should be 240 aa long.<p>
+
+<img src="images/js_context.png" align="center" width="400"><p>
+<br>
+
+
+<h2>Access service from scripts</h2>
+It is straightforward to invoke the HIVDRC services from scripts in Bioclipse. 
+To invoke a single service, open up the <b>JavaScript console</b> from the menu 
+<b>Window > Show View > Other...</b> and select <b>Scripting > JavaScript console</b>.
+In the console, type:<p>
+
+<pre>   help hivdrc</pre><p>
+
+This shows the available commands for consuming the services.<p>
+
+<img src="images/js_help.png" align="center"><p>
+<br>
+
+
+<b>To predict a PI, enter:</b><p>
+
+<pre>   hivdrc.predict("PQITLWQRPLVTIKIGCQLKEALLDTGADDTVLEEANLPGRWKPKMIGGIGGFIK
+VRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNF")</pre><p>
+
+<img src="images/js_predictPI.png" align="center" width="700"><p>
+<br>
+
+
+<b>To predict a NRTI, enter:</b><p>
+
+<pre>   hivdrc.predict("PISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYN
+TPVFAIKKKDSTKWRKLVDLRELNKRTQDFWEVQLGIPHPAGLKKKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSIN
+NETPGIRYQYNVLPQGWKGSPAIFQSSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFT
+TPDKKHQKEPPFLWMGYELHPDKWT")</pre><p>
+
+<img src="images/js_predictNRTI.png" align="center" width="700"><p>
+<br>
+
+
+A <b>sample JavaScript</b> for invoking HIVDRC functionality in Bioclipse is available 
+as a Gist (versioned snippet), with number <a href="http://gist.github.com/403896">403896</a>. 
+Bioclipse can easily download these scripts. In the JavaScript console, type:<p>
+
+<pre>   gist.download(403896)</pre><p>
+
+The file "Gists403896.0.js" is downloaded in a folder "Gists" in the 
+Bioclipse Explorer. Open this file, and click the "Run" button in the toolbar 
+to execute the script.
+
+
+</body>
+</html>
