@@ -1,3 +1,8 @@
 .settings
 bin
 output
+org.hivdrc.update-site/plugins/
+org.hivdrc.update-site/features/
+org.hivdrc.update-site/artifacts.jar
+org.hivdrc.update-site/content.jar
+org.hivdrc.update-site/logs.zip
