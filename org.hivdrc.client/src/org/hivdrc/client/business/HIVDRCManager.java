@@ -27,7 +27,7 @@ import net.bioclipse.xws.client.adhoc.IFunction;
 import net.bioclipse.xws.exceptions.XmppException;
 import net.bioclipse.xws.exceptions.XwsException;
 import net.bioclipse.xws4j.business.IXwsManager;
-import net.bioclipse.xws4j.exceptions.Xws4jException;
+import net.sf.xws4j.exceptions.Xws4jException;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;

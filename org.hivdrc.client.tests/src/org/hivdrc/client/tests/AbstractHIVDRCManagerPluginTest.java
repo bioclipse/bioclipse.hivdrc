@@ -26,8 +26,8 @@ import net.bioclipse.xws.exceptions.XmppException;
 import net.bioclipse.xws.exceptions.XwsException;
 import net.bioclipse.xws4j.Activator;
 import net.bioclipse.xws4j.business.XwsManager;
-import net.bioclipse.xws4j.exceptions.Xws4jException;
-import net.bioclipse.xws4j.preferences.PreferenceConstants;
+import net.sf.xws4j.exceptions.Xws4jException;
+import net.sf.xws4j.preferences.PreferenceConstants;
 
 import org.hivdrc.client.business.IHIVDRCManager;
 import org.hivdrc.hivpred.DocumentRoot;
@@ -66,7 +66,7 @@ public abstract class AbstractHIVDRCManagerPluginTest {
     public void initializeXMPPcredentials() {
 
       //XWS uses preferences, so set prefs for XWS
-      IPreferenceStore preferences = Activator.getDefault().getPreferenceStore();
+      IPreferenceStore preferences = net.sf.xws4j.Activator.getDefault().getPreferenceStore();
       preferences.setValue(PreferenceConstants.P_STRING_JID, jid);
       preferences.setValue(PreferenceConstants.P_STRING_RESOURCE, resource);
       preferences.setValue(PreferenceConstants.P_STRING_PASSWORD, pwd);

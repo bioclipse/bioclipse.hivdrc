@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.ui,
  net.bioclipse.xws4j,
  se.uu.farmbio.hivpred.model,
  se.uu.farmbio.hivpredrt.model,
- org.eclipse.emf.ecore;bundle-version="2.5.0"
+ org.eclipse.emf.ecore,
+ net.sf.xws4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.apache.log4j
 Bundle-ActivationPolicy: lazy
