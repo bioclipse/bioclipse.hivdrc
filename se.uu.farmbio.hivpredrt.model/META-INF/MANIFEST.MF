@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: se.uu.farmbio.hivpredrt.model;singleton:=true
 Bundle-Version: 0.6.0
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ xom.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.hivdrc.hivpredrt,
@@ -13,8 +14,7 @@ Export-Package: org.hivdrc.hivpredrt,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
- net.bioclipse.xws4j,
- net.bioclipse.xom
+ net.sf.xws4j;bundle-version="2.0.0"
 Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.log4j,
  org.apache.xerces.dom,
