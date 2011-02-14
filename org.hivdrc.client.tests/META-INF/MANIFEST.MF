@@ -15,12 +15,12 @@ Require-Bundle: org.eclipse.ui,
  org.springframework.bundle.spring.aop,
  net.sf.cglib,
  org.springframework.osgi.aopalliance.osgi,
- org.junit4,
  net.bioclipse.xws4j,
  se.uu.farmbio.hivpred.model,
  se.uu.farmbio.hivpredrt.model,
  org.eclipse.emf.ecore,
  net.sf.xws4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: org.apache.log4j
+Import-Package: org.apache.log4j,
+ org.junit
 Bundle-ActivationPolicy: lazy
