@@ -15,6 +15,6 @@ Require-Bundle: org.apache.xerces,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
- net.sf.xws4j;bundle-version="2.0.0"
+ net.sf.xws4j
 Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.log4j
