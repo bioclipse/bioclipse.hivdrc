@@ -22,5 +22,7 @@ Require-Bundle: org.eclipse.ui,
  net.sf.xws4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.apache.log4j,
- org.junit
+ org.junit,
+ org.junit.runner,
+ org.junit.runners
 Bundle-ActivationPolicy: lazy
