@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: HIVDRC Tests
 Bundle-SymbolicName: org.hivdrc.client.tests; singleton:=true
-Bundle-Version: 0.6.0
+Bundle-Version: 2.6.0.qualifier
 Bundle-Activator: org.hivdrc.client.tests.Activator
 Bundle-Vendor: hivdrc.org
 Require-Bundle: org.eclipse.ui,
