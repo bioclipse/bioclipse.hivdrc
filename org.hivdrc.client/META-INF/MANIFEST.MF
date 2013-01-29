@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: HIVDRC Client
 Bundle-SymbolicName: org.hivdrc.client; singleton:=true
-Bundle-Version: 0.6.0
+Bundle-Version: 2.6.0.vqualifier
 Bundle-Activator: org.hivdrc.client.Activator
 Bundle-Vendor: hivdrc.org
 Export-Package: org.hivdrc.client,
