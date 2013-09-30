@@ -2,7 +2,7 @@
 <feature
       id="org.hivdrc.feature"
       label="HIVDRC"
-      version="2.6.0.vqualifier"
+      version="2.6.1.qualifier"
       provider-name="hivdrc.org"
       plugin="org.hivdrc.client">
 
